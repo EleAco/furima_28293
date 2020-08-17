@@ -28,7 +28,7 @@ Things you may want to cover:
 | Column           | Type    | Options     |
 | -----------------|---------|-------------|
 | nickname         | string  | null: false |
-| emaill           | string  | null: false |
+| email           | string  | null: false |
 | password         | string  | null: false |
 | confirm_password | string  | null: false |
 | last_name        | string  | null: false |
@@ -77,14 +77,15 @@ Things you may want to cover:
 - belongs_to :user
 
 ## buys テーブル
-| Column                 | Type    | Option      |
-|------------------------|---------|-------------|
-| zip_code               | string  | null: false |
-| prefectures            | integer | null: false |
-| city                   | string  | null: false |
-| address                | string  | null: false |
-| building_name          | string  |             |
-| phone_namber           | numeric | null: false |
+| Column                 | Type    | Option                         |
+|------------------------|---------|--------------------------------|
+| zip_code               | string  | null: false                    |
+| prefectures            | integer | null: false                    |
+| city                   | string  | null: false                    |
+| address                | string  | null: false                    |
+| building_name          | string  |                                |
+| phone_namber           | string  | null: false                    |
+| user_id                | integer | null: false, foreign_key: true |
 
 ### Associatoin
 
