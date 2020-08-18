@@ -38,10 +38,8 @@ Things you may want to cover:
 | birthday         | date    | null: false |
 
 ### Association
-
-- has_many :buy
-- has_many :item
-- belongs_to :transactions
+- has_many :items
+- has_many :item_purchases
 
 
 ## items テーブル
@@ -61,20 +59,19 @@ Things you may want to cover:
 
 - has_one :buy
 - belongs_to :user
-- has_many :comment
+- has_many :comments
+- has_one :item_purchase
 
 
 ## comments テーブル
 | Column          | Type    | Option                         |
 |-----------------|---------|--------------------------------|
 | comment         | text    |                                |
-| user_id         | integer | null: false, foreign_key: true |
 | item_id         | integer | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :item
-- belongs_to :user
 
 ## buys テーブル
 | Column                 | Type    | Option                         |
@@ -85,20 +82,23 @@ Things you may want to cover:
 | address                | string  | null: false                    |
 | building_name          | string  |                                |
 | phone_namber           | string  | null: false                    |
-| user_id                | integer | null: false, foreign_key: true |
+| item_id                | integer | null: false, foreign_key: ture |
+| item_purchase_id       | integer | null: false, foreign_key: ture |
 
 ### Associatoin
 
-- belongs_to :user
 - belongs_to :item
-- has_one :transactions
+- belongs_to :item_purchase
 
-## toransactions テーブル
+## item_purchases テーブル
 | Column                | Type    | Option                         |
 |-----------------------|---------|--------------------------------|
-| users_id              | integer | null: false, foreign_key: true |
+| user_id               | integer | null: false, foreign_key: true |
+| item_purchase         | string  | null: false                    |
+| item_id               | integer | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :byus
-- has_many :users
+- has_one :buy
+- belongs_to :user
+- belongs_to :item
