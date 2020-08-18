@@ -48,16 +48,11 @@ Things you may want to cover:
 | image           | string  | null: false                    |
 | name            | string  | null: false                    |
 | explanation     | text    | null: false                    |
-| category        | string  | null: false                    |
-| item_status     | string  | null: false                    |
-| delivery        | string  | null: false                    |
-| delivery_days   | string  | null: false                    |
 | price           | numeric | null: false                    |
 | user_id         | integer | null: false, foreign_key: true |
 
 ### Association
 
-- has_one :buy
 - belongs_to :user
 - has_many :comments
 - has_one :item_purchase
@@ -79,22 +74,16 @@ Things you may want to cover:
 | zip_code               | string  | null: false                    |
 | prefectures            | integer | null: false                    |
 | city                   | string  | null: false                    |
-| address                | string  | null: false                    |
-| building_name          | string  |                                |
-| phone_namber           | string  | null: false                    |
-| item_id                | integer | null: false, foreign_key: ture |
 | item_purchase_id       | integer | null: false, foreign_key: ture |
 
 ### Associatoin
 
-- belongs_to :item
 - belongs_to :item_purchase
 
 ## item_purchases テーブル
 | Column                | Type    | Option                         |
 |-----------------------|---------|--------------------------------|
 | user_id               | integer | null: false, foreign_key: true |
-| item_purchase         | string  | null: false                    |
 | item_id               | integer | null: false, foreign_key: true |
 
 ### Association
