@@ -43,13 +43,18 @@ Things you may want to cover:
 
 
 ## items テーブル
-| Column          | Type    | Option                         |
-| ----------------|---------|--------------------------------|
-| image           | string  | null: false                    |
-| name            | string  | null: false                    |
-| explanation     | text    | null: false                    |
-| price           | numeric | null: false                    |
-| user_id         | integer | null: false, foreign_key: true |
+| Column           | Type    | Option                         |
+| -----------------|---------|--------------------------------|
+| image            | string  | null: false                    |
+| name             | string  | null: false                    |
+| explanation      | text    | null: false                    |
+| category_id      | integer | null: false                    |
+| item_status_id   | integer | null: false                    |
+| delivery_id      | integer | null: false                    |
+| area_id          | integer | null: false                    |
+| delivery_days_id | integer | null: false                    |
+| price            | numeric | null: false                    |
+| user_id          | integer | null: false, foreign_key: true |
 
 ### Association
 
@@ -72,8 +77,11 @@ Things you may want to cover:
 | Column                 | Type    | Option                         |
 |------------------------|---------|--------------------------------|
 | zip_code               | string  | null: false                    |
-| prefectures            | integer | null: false                    |
+| area_id                | integer | null: false                    |
 | city                   | string  | null: false                    |
+| addoress               | string  | null: false                    |
+| building_name          | string  |                                |
+| phone_number           | numeric | null: false
 | item_purchase_id       | integer | null: false, foreign_key: ture |
 
 ### Associatoin
