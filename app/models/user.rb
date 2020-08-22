@@ -4,14 +4,28 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, presence: true
-  validates :password, presence: true
+  with_options presence: true do |users|
+    users.validates :nickname
+    users.validates :email
+    users.validates :password
+    users.validates :encrypted_password
+    users.validates :first_name
+    users.validates :last_name
+    users.validates :first_name_kana
+    users.validates :last_name_kana
+    users.validates :birthday
+  end
+
+  with_options format: { with: /\A[一-龥]+\z/ } do |name|
+    name.validates :first_name
+    name.validates :last_name
+  end
+
+  with_options format: { with: /\A([ァ-ン]|ー)+\z/ } do |kana|
+    kana.validates :first_name_kana
+    kana.validates :last_name_kana
+  end
+  
   validates :password, format: { with: /\A[a-zA-Z0-9]+\z/ }
-  validates :password, length: { minimum: 6 }
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :first_name_kana, presence: true
-  validates :last_name_kana, presence: true
-  validates :birthday, presence: true
 end
 
