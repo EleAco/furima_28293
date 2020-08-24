@@ -181,8 +181,9 @@
   <%# //商品一覧 %>
 </div>
 <div class='purchase-btn'>
+  <% unless user_signed_in? %>
   <span class='purchase-btn-text'>出品する</span>
-  <a href="#">
+  <a href= "#" >
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </a>
 </div>
