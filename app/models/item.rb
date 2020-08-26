@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_fee_status
   belongs_to :user
   has_many :comments
-  has_one :item_purchases
+  has_one :item_purchase
   has_one_attached :image
 
   with_options presence: true do |i|
@@ -27,6 +27,6 @@ class Item < ApplicationRecord
     ah.validates :item_status_id
     ah.validates :shipping_fee_status_id
   end
-  validates :price, numericality: {greater_than: 299}
-  validates :price, numericality:{less_than: 10000000}
+  validates :price, numericality: { greater_than: 299 }
+  validates :price, numericality: { less_than: 10_000_000 }
 end
