@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  # before_action :move_to_index, except: [:index]
   def index
     @items = Item.all
   end
@@ -25,8 +24,4 @@ class ItemsController < ApplicationController
                   :shipping_fee_status_id, :area_id, :scheduled_delivery_id, :price).merge(user_id: current_user.id)
   end
 end
-# def move_to_index
-#   unless user_signed_in?
-#     redirect_to action: :index
-#   end
-# end
+

@@ -27,4 +27,6 @@ class Item < ApplicationRecord
     ah.validates :item_status_id
     ah.validates :shipping_fee_status_id
   end
+  validates :price, numericality: {greater_than: 299}
+  validates :price, numericality:{less_than: 10000000}
 end
