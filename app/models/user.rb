@@ -29,7 +29,6 @@ class User < ApplicationRecord
     kana.validates :last_name_kana
   end
 
-  with_options format: { with: /\A[a-zA-Z0-9]+\z/ } do |ps|
-    ps.validates :password
-  end
+  PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/.freeze
+  validates_format_of :password, with:PASSWORD_REGEX
 end
