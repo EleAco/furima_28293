@@ -28,7 +28,6 @@ class User < ApplicationRecord
     kana.validates :first_name_kana
     kana.validates :last_name_kana
   end
-  
+
   validates :password, format: { with: /\A[a-zA-Z0-9]+\z/ }
 end
-
