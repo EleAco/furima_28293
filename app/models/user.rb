@@ -30,5 +30,5 @@ class User < ApplicationRecord
   end
 
   PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/.freeze
-  validates_format_of :password, with:PASSWORD_REGEX
+  validates_format_of :password, with: PASSWORD_REGEX
 end
