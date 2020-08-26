@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :items
+  has_many :item_purchases
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -25,7 +28,7 @@ class User < ApplicationRecord
     kana.validates :first_name_kana
     kana.validates :last_name_kana
   end
-  
-  validates :password, format: { with: /\A[a-zA-Z0-9]+\z/ }
-end
 
+  PASSWORD_REGEX = /\A[a-zA-Z0-9]+\z/.freeze
+  validates_format_of :password, with:PASSWORD_REGEX
+end

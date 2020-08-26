@@ -43,18 +43,19 @@ Things you may want to cover:
 
 
 ## items テーブル
-| Column           | Type    | Option                         |
-| -----------------|---------|--------------------------------|
-| image            | string  | null: false                    |
-| name             | string  | null: false                    |
-| explanation      | text    | null: false                    |
-| category_id      | integer | null: false                    |
-| item_status_id   | integer | null: false                    |
-| delivery_id      | integer | null: false                    |
-| area_id          | integer | null: false                    |
-| delivery_days_id | integer | null: false                    |
-| price            | numeric | null: false                    |
-| user_id          | integer | null: false, foreign_key: true |
+| Column                 | Type    | Option                         |
+| -----------------------|---------|--------------------------------|
+| image                  | string  | null: false                    |
+| name                   | string  | null: false                    |
+| explanation            | text    | null: false                    |
+| category_id            | integer | null: false                    |
+| item_status_id         | integer | null: false                    |
+| shipping_fee_status_id | integer | null: false                    |
+| delivery_id            | integer | null: false                    |
+| area_id                | integer | null: false                    |
+| scheduled_delivery     | integer | null: false                    |
+| price                  | numeric | null: false                    |
+| user_id                | integer | null: false, foreign_key: true |
 
 ### Association
 
