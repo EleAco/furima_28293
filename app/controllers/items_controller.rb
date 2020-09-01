@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :purchase, only: [:show]
   def index
     @items = Item.all.order('created_at DESC')
   end
@@ -54,5 +55,9 @@ class ItemsController < ApplicationController
     params.require(:item)
           .permit(:image, :name, :explanation, :category_id, :item_status_id,
                   :shipping_fee_status_id, :area_id, :scheduled_delivery_id, :price).merge(user_id: current_user.id)
+  end
+
+  def purchase
+    redirect_to root_path if @item.item_purchase.present?
   end
 end
