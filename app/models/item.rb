@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   has_many :comments
   has_one :item_purchase
   has_one_attached :image
+  has_one :buys
 
   with_options presence: true do |i|
     i.validates :image

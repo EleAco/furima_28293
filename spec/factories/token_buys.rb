@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :buy do
-    zip_code           { 123 - 4567 }
+  factory :token_buy do
+    zip_code           { '123-4567' }
     area_id            { 2 }
     city               { '福岡県' }
     addoress           { '大野城市' }
