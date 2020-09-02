@@ -19,7 +19,7 @@ class User < ApplicationRecord
     users.validates :birthday
   end
 
-  with_options format: { with: /\A[一-龥]+\z/ } do |name|
+  with_options format: { with: /\A[ぁ-んァ-ン一-龥]/} do |name|
     name.validates :first_name
     name.validates :last_name
   end
