@@ -1,5 +1,3 @@
-server '用意したElastic IP', user: 'ec2-user', roles: %w{app db web}
-
 
 # server-based syntax
 # ======================
@@ -62,3 +60,5 @@ server '用意したElastic IP', user: 'ec2-user', roles: %w{app db web}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '54.248.19.145', user: 'ec2-user', roles: %w{app db web}
